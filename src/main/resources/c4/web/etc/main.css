@@ -1,0 +1,83 @@
+body { color:#000; background:#4aa7de; font:100%/1.5 Tahoma, Arial, Helvetica, sans-serif; margin:0 auto; max-width:960px; }
+
+p, form, select { margin:0; padding:0; }
+img { max-width:100%; }
+
+h1 { padding:0; margin:0.5em 0 0.3125em 0; font:1.5em Tahoma; color:#000; }
+h2 { padding:0; margin:0.5.em 0 0.125em 0; font:1.25em Tahoma; color:#000; }
+h3 { padding:0; margin:0.25em 0 0 0; font:1.125em Tahoma; color:#000; }
+
+.charts {
+  text-align:center;
+  background: #fff;
+}
+
+.charts .chart {
+  display: inline-block;
+  margin:1em 2em;
+}
+
+header {
+  background: #304682;
+}
+
+header h1 {
+  color: #fff;
+  padding:.5em 1em;
+  margin:0;
+  display: inline-block;
+}
+
+header p {
+  color: #eae7e7;
+  padding:1em 1em 0 0;
+  float: right;
+}
+
+footer {
+  background: #304682;
+  padding-top:.5em;
+  text-align: center;
+}
+
+footer a img {
+  display: inline-block;
+  height: 2em;
+}
+
+
+#viz {
+  width: 100%;
+  height: 600px;
+  border-bottom: 5px solid #4aa7de;
+  background: #fff;
+}
+
+.bolt {
+  background: #f3eeee;
+  color: #000;
+  text-align: center;
+}
+
+.bolt a {
+  display: inline-block;
+  height: 2.2em;
+  vertical-align: middle;
+}
+
+.bolt a:hover {
+  background: #fff;
+}
+
+.bolt img {
+  float:l eft;
+  height: 100%;
+  padding: 0 10px;
+}
+
+.bolt span {
+  display: inline-block;
+  font-size: 1.1em;
+  font-family: monospace;
+  padding-left: 1em;
+}

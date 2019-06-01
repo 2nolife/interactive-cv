@@ -1,0 +1,17 @@
+# start with valid triple
+<http://coldcore.com/schema/cv/Person/Sylvanas_Windrunner> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+
+# not configured term node
+_:1 <http://coldcore.com/schema/cv/term#unknown> _:a .
+
+# node without term prefix
+_:1 <http://coldcore.com/schema/cv/about> _:a .
+
+# not configured foaf node
+_:1 <http://xmlns.com/foaf/0.1/knows> _:a .
+
+# technology node without value
+_:1 <http://coldcore.com/schema/cv/knows> <http://coldcore.com/schema/cv/Technology> .
+
+# end with valid triple
+<http://coldcore.com/schema/cv/Person/Sylvanas_Windrunner> <http://xmlns.com/foaf/0.1/title> "Ms" .

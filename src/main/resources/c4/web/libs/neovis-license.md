@@ -1,0 +1,1 @@
+https://github.com/neo4j-contrib/neovis.js/blob/master/LICENSE

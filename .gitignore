@@ -1,0 +1,23 @@
+# sbt
+lib_managed/
+project/project
+target/
+
+# IntelliJ
+.idea/
+*.iws
+*.ids
+*.ipr
+*.iml
+
+# Mac
+.DS_Store
+
+# Log files
+*.log
+
+# npm
+node_modules/
+
+# weblet public
+weblet/public/

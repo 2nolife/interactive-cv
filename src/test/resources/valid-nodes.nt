@@ -1,0 +1,115 @@
+# Person - about - anon
+<http://coldcore.com/schema/cv/Person/Sylvanas_Windrunner> <http://coldcore.com/schema/cv/term#about> _:1 .
+
+# Person - type - Person
+<http://coldcore.com/schema/cv/Person/Varian_Wrynn#king> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+<http://coldcore.com/schema/cv/Person/Tiffin_Wrynn#queen> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+
+# anon - type - Person
+_:1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+
+# anon - name - text
+_:1 <http://xmlns.com/foaf/0.1/name> "Sylvanas Windrunner" .
+_:1 <http://xmlns.com/foaf/0.1/name> "Сильвана Ветрокрылая"@ru .
+
+# anon - birthDate - date
+_:1 <http://dbpedia.org/ontology/birthDate> "1919-09-10"^^<http://www.w3.org/2001/XMLSchema#date> .
+
+# anon - start/end year/month/day - year/month/day
+_:1 <http://coldcore.com/schema/cv/term#startYear> "2016"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+_:1 <http://coldcore.com/schema/cv/term#endYear> "2016"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+_:1 <http://coldcore.com/schema/cv/term#startMonth> "--09"^^<http://www.w3.org/2001/XMLSchema#gMonth> .
+_:1 <http://coldcore.com/schema/cv/term#endMonth> "--09"^^<http://www.w3.org/2001/XMLSchema#gMonth> .
+_:1 <http://coldcore.com/schema/cv/term#startDay> "---15"^^<http://www.w3.org/2001/XMLSchema#gDay> .
+_:1 <http://coldcore.com/schema/cv/term#endDay> "---15"^^<http://www.w3.org/2001/XMLSchema#gDay> .
+
+# anon - title - text
+_:1 <http://xmlns.com/foaf/0.1/title> "Ms" .
+
+# has
+_:1 <http://coldcore.com/schema/cv/term#has> _:a .
+
+# nationality
+_:1 <http://coldcore.com/schema/cv/term#nationality> _:a .
+
+# available
+_:1 <http://coldcore.com/schema/cv/term#available> _:a .
+
+# work
+_:1 <http://coldcore.com/schema/cv/term#work> _:a .
+
+# location
+_:1 <http://coldcore.com/schema/cv/term#location> _:a .
+
+# contact
+_:1 <http://coldcore.com/schema/cv/term#contact> _:a .
+
+# email
+_:1 <http://coldcore.com/schema/cv/term#email> _:a .
+
+# phone
+_:1 <http://coldcore.com/schema/cv/term#phone> _:a .
+
+# education
+_:1 <http://coldcore.com/schema/cv/term#education> _:a .
+
+# study
+_:1 <http://coldcore.com/schema/cv/term#study> _:a .
+
+# hobby
+_:1 <http://coldcore.com/schema/cv/term#hobby> _:a .
+
+# likes
+_:1 <http://coldcore.com/schema/cv/term#likes> _:a .
+
+# reference
+_:1 <http://coldcore.com/schema/cv/term#reference> _:a .
+
+# referee
+_:1 <http://coldcore.com/schema/cv/term#referee> _:a .
+
+# skill
+_:1 <http://coldcore.com/schema/cv/term#skill> _:a .
+
+# anon - knows - Technology
+_:1 <http://coldcore.com/schema/cv/term#knows> <http://coldcore.com/schema/cv/Technology/Dagger> .
+_:1 <http://coldcore.com/schema/cv/term#knows> <http://coldcore.com/schema/cv/Technology/Bow/Arrow> .
+
+# anon - knows - Team
+_:1 <http://coldcore.com/schema/cv/term#knows> <http://coldcore.com/schema/cv/Team/Pathfinder> .
+
+# contribution
+_:1 <http://coldcore.com/schema/cv/term#contribution> _:a .
+
+# url
+_:1 <http://coldcore.com/schema/cv/term#url> _:a .
+
+# career
+_:1 <http://coldcore.com/schema/cv/term#career> _:a .
+
+# works
+_:1 <http://coldcore.com/schema/cv/term#works> _:a .
+
+# anon - works - Company
+_:1 <http://coldcore.com/schema/cv/term#works> <http://coldcore.com/schema/cv/Company/Trade_Fleets> .
+
+# anon - type - Organization
+_:1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Organization> .
+
+# assignment
+_:1 <http://coldcore.com/schema/cv/term#assignment> _:a .
+
+# group
+_:1 <http://coldcore.com/schema/cv/term#group> _:a .
+
+# role
+_:1 <http://coldcore.com/schema/cv/term#role> _:a .
+
+# project
+_:1 <http://coldcore.com/schema/cv/term#project> _:a .
+
+# uses
+_:1 <http://coldcore.com/schema/cv/term#uses> _:a .
+
+# company
+_:1 <http://coldcore.com/schema/cv/term#company> _:a .

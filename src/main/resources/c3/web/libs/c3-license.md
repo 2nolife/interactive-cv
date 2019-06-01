@@ -1,0 +1,1 @@
+https://github.com/c3js/c3/blob/master/LICENSE
