@@ -1,4 +1,4 @@
-## Interactive CV frontend ##
+## Node.js frontend ##
 
 ### Start ###
 
