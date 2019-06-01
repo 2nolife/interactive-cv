@@ -5,8 +5,8 @@ Convert your CV (Resume) into graphs and diagrams so your future employer has so
 Feedback email **cftp@coldcore.com**
 
 
-![Graph sample](files/sample-graph.jpg){:width="50%"}
-![Chart sample](files/sample-chart.jpg){:width="50%"}
+![Graph sample](files/sample-graph.jpg?s=300)
+![Chart sample](files/sample-chart.jpg)
 
 ## Demo ##
 
