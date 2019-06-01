@@ -10,4 +10,4 @@ $ npm start
 Bound weblet to port 8080
 ```
 
-Run 'files/web-update.sh' to copy files into `weblet/public` then open http://localhost:8080
+Run `files/web-update.sh` to copy files into `weblet/public` then open http://localhost:8080
