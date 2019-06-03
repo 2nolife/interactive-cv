@@ -14,7 +14,7 @@ object Library {
   val commonsLang     = "org.apache.commons"   %  "commons-lang3"   % "3.9"
   val commonsIo       = "commons-io"           %  "commons-io"      % "2.6"
   val mapdb           = "org.mapdb"            %  "mapdb"           % "3.0.7"
-  val neo4j           = "org.neo4j"            %  "neo4j"           % "3.5.5"
+  val neo4j           = "org.neo4j"            %  "neo4j"           % "3.5.5" // match Neo4j server version
   val freemarker      = "org.freemarker"       %  "freemarker"      % "2.3.28"
   val gson            = "com.google.code.gson" %  "gson"            % "2.8.5"
   val zip4j           = "net.lingala.zip4j"    %  "zip4j"           % "1.3.2"
