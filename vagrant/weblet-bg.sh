@@ -1,10 +1,9 @@
 #!/bin/sh -e
 
-# Run webled in the background
+# Run weblet in the background
 #
 # stop:
-#   forever list
-#   forever stop #process
+#   forever stopall
 #
 # output:
 #   tail -f ~/.forever/weblet.log
