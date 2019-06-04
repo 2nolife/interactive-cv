@@ -67,7 +67,7 @@ The script should produce no errors and there should be no errors in any of the 
 
 3. Script produces immense output and stops on a failed step. It should be easy to correct errors
    on abnormal script termination. But if the application is not running in the very end, it may be
-   hard to find what failed, then step by step may help (see point 5.)
+   hard to find what failed, then step by step may help (see point 4.)
 
    To run a single step
 ```
