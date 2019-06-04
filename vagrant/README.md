@@ -1,4 +1,4 @@
-﻿## Installation for Vagrant FreeBSD ##
+﻿## Install the application on Vagrant FreeBSD ##
 
 ```
 Command line interface
