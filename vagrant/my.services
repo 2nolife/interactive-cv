@@ -1,0 +1,3 @@
+#!/bin/sh
+echo "Starting weblet"
+su -l vagrant -c "exec /usr/local/interactive-cv/weblet.sh > /dev/null"
