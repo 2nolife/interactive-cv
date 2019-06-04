@@ -2,7 +2,7 @@
 
 Convert your CV (Resume) into graphs and diagrams so your future employer has something to play with.
 
-Feedback email **cftp@coldcore.com**
+Feedback email cftp@coldcore.com
 
 
 ![Graph sample](files/sample-graph.jpg)
