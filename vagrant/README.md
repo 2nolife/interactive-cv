@@ -1,4 +1,4 @@
-﻿## Install Interactive CV on Vagrant FreeBSD ##
+﻿## Installation for Vagrant FreeBSD ##
 
 ```
 Command line interface
