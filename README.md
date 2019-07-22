@@ -48,3 +48,4 @@ This code is open source software licensed under the [GNU Lesser General Public 
 * Neovis graph visualization
 * RDF schema is restricted to my CV tokens
 * Node.js frontend
+* Excel template to convert CV into triples.
