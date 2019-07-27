@@ -46,6 +46,8 @@ object Config {
   lazy val c3_charts: Seq[writer.c3.chart.Chart] =
     conf.getStringList("interactive-cv.c3-writer.charts").asScala
       .map(Class.forName(_).newInstance.asInstanceOf[writer.c3.chart.Chart])
+  val c3_chart_TimePerCompany_top: Int = conf.getInt("interactive-cv.c3-writer.chart-TimePerCompany.top")
+  val c3_chart_TimePerTechnology_top: Int = conf.getInt("interactive-cv.c3-writer.chart-TimePerTechnology.top")
 
   val c4_dir: File = new File(conf.getString("interactive-cv.c4-interceptor.c4-dir"))
   val c4_c3_dir: File = new File(conf.getString("interactive-cv.c4-interceptor.c3-dir"))

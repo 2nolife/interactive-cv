@@ -1,11 +1,11 @@
 c3.generate({
   bindto: "#chart1",
   data: {
-    columns: ${js_columns},
+    columns: ${js_columns_top},
     type : "donut"
   },
   donut: {
-    title: "Employment",
+    title: "Top Employments",
     label: {
       format: function (value, ratio, id) {
         return value+" m"

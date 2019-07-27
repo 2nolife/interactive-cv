@@ -316,7 +316,14 @@ package chart {
     override def build(career: model.Career, person: PersonNode): Map[String,Any] = {
       val chartColumns = career.companies
         .map(company => Array(company.name, company.assignments.map(a => Util.months(a.start, a.end)).sum))
-      Map("js_columns" -> new ChartJson.Columns(chartColumns.toArray).json)
+        .sortBy { case Array(_, n: Int) => n }.reverse // order
+
+      val top = Config.c3_chart_TimePerCompany_top
+      Map(
+        "js_columns" -> new ChartJson.Columns(chartColumns.toArray).json,
+        "js_columns_top" -> new ChartJson.Columns(chartColumns.toArray.take(top)).json,
+        "top" -> top
+      )
     }
   }
 
@@ -329,8 +336,14 @@ package chart {
         .groupBy(_._1)
         .map { case (name, seq) => name -> seq.map(_._2).sum }
         .map { case (name, n) => Array(name, n) }
+        .toSeq.sortBy { case Array(_, n: Int) => n }.reverse // order
 
-      Map("js_columns" -> new ChartJson.Columns(chartColumns.toArray).json)
+      val top = Config.c3_chart_TimePerTechnology_top
+      Map(
+        "js_columns" -> new ChartJson.Columns(chartColumns.toArray).json,
+        "js_columns_top" -> new ChartJson.Columns(chartColumns.toArray.take(top)).json,
+        "top" -> top
+      )
     }
   }
 
