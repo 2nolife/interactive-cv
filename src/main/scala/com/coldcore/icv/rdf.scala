@@ -2,6 +2,7 @@ package com.coldcore.icv
 package rdf
 
 import java.io.File
+import java.net.URLDecoder
 import java.nio.file.{Files, Paths}
 
 import core.{DefaultIterator, Triple}
@@ -137,11 +138,13 @@ private class NodeConverter {
   private val schema = (uri: String) => // configured schema by URI
     Config.schema.collectFirst { case s if uri.startsWith(s.uri) => s }
 
+  private val decode = (uri: String) => URLDecoder.decode(uri, "UTF-8").trim
+
   private val parseURI = (prefix: String, uri: String) => //...Person/Foo_Bar#abc -> (Foo_Bar#abc,Foo Bar)
-    (uri.drop(prefix.length), uri.drop(prefix.length).takeWhile('#' !=).replace("_", " "))
+    (uri.drop(prefix.length), decode(uri).drop(prefix.length).takeWhile('#' !=).replace("_", " "))
 
   private val parseValue = (prefix: String, uri: String) => //.../Foo_barAbc -> Foo bar abc
-    uri.drop(prefix.length).replace("_", " ").split("\\s").map { token =>
+    decode(uri).drop(prefix.length).replace("_", " ").split("\\s").map { token =>
       val s = StringUtils.splitByCharacterTypeCamelCase(token).mkString(" ")
       if (s.head == s.head.toLower) s.toLowerCase else s
     }.mkString(" ")
