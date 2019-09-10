@@ -41,7 +41,7 @@ material under the project's open source license and warrant that you have the l
 This code is open source software licensed under the [GNU Lesser General Public License v3](http://www.gnu.org/licenses/lgpl-3.0.en.html).
 
 ## Change log ##
-### 0.1 ###
+### 1.0 ###
 * Consumes n-triple files
 * Builds Neo4j graphs connected with each other
 * Builds simple C3 charts

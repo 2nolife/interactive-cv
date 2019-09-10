@@ -6,7 +6,7 @@ object Common {
   val settings =
     List(
       organization := "com.coldcore",
-      version := "0.1",
+      version := "1.0",
       scalaVersion := Version.scala,
       crossScalaVersions := List(scalaVersion.value),
       scalacOptions ++= List(
