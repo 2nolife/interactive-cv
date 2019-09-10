@@ -20,11 +20,12 @@ Sub Init()
 
 End Sub
 
-Private Function FindCellByValue(value As String, colls As String) As Range
+Private Function FindCellByValue(value As String, colls As String, Optional startRow As Integer) As Range
     
     Dim cell As Range
 
     Columns(colls).Select
+    ActiveCell.offset(startRow, 0).Activate
     Set cell = Selection.Find(What:=value, After:=ActiveCell, LookIn:=xlValues)
     
     Set FindCellByValue = cell
@@ -49,7 +50,7 @@ Private Function GroupRangeByName(name As String) As Range
 
     Set beginCell = FindCellByValue(name + " BEGIN", "A:A")
     Set endCell = FindCellByValue(name + " END", "A:A")
-    Set cell = Range(beginCell.Offset(2, 0), endCell.Offset(-1, 0))
+    Set cell = Range(beginCell.offset(2, 0), endCell.offset(-1, 0))
     
     Set GroupRangeByName = cell
     
@@ -61,7 +62,7 @@ Sub CopyDropdown(groupName As String, sheetName As String, cellAddress As String
     
     Dim beginCell As Range, controlCell As Range
     Set beginCell = FindCellByValue(groupName + " BEGIN", "A:A")
-    Set controlCell = beginCell.Offset(0, 1)
+    Set controlCell = beginCell.offset(0, 1)
 
     controlCell.Select
     Selection.Copy
@@ -109,14 +110,20 @@ Sub ExposeDropdownControls(sheetName As String, groupName As String)
     
 End Sub
 
-Function GetUriByValue(value As String) As String
+Function GetUriByValue(value As String, Optional groupName As String) As String
     
     Sheet4.Select
+    
+    Dim startRow As Integer, beginCell As Range, cell As Range
+    
+    If Not IsMissing(groupName) Then
+        Set beginCell = FindCellByValue(groupName + " BEGIN", "A:A")
+        startRow = beginCell.Row
+    End If
+    
+    Set cell = FindCellByValue(value, "B:B", startRow)
 
-    Dim cell As Range
-    Set cell = FindCellByValue(value, "B:B")
-
-    GetUriByValue = cell.Offset(0, -1).value
+    GetUriByValue = cell.offset(0, -1).value
     
 End Function
 
@@ -127,7 +134,8 @@ Function GetUriTypeByUri(uri As String) As String
     Dim cell As Range, uriType As String
     Set cell = FindCellByValue(uri, "A:A")
     
-    GetUriTypeByUri = cell.Offset(0, 2).value
+    GetUriTypeByUri = cell.offset(0, 2).value
     
 End Function
+
 

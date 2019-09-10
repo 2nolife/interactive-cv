@@ -87,6 +87,8 @@ Private Function ConvertValueByUriType(value As String, uriType As String) As St
                 convertedValue = """--" + value + """" + "^^<http://www.w3.org/2001/XMLSchema#gMonth>"
             Case "technology"
                 convertedValue = "<http://coldcore.com/schema/cv/Technology/" + Replace(value, " ", "%20") + ">"
+            Case "team"
+                convertedValue = "<http://coldcore.com/schema/cv/Team/" + Replace(value, " ", "%20") + ">"
             Case Else
                 convertedValue = """" + value + """"
         End Select
@@ -97,14 +99,18 @@ Private Function ConvertValueByUriType(value As String, uriType As String) As St
     
 End Function
 
-Private Sub WriteTruple(subject As String, predicate As String, object As String)
+Private Sub WriteTruple(subject As String, predicate As String, object As String, Optional sectionName As String)
 
     If Left(predicate, 1) <> "<" Then
         ' convert predicate to URI and object to proper value (by predicate URI type)
         Dim uriType As String
-        predicate = ControlsModule.GetUriByValue(predicate)
+        predicate = ControlsModule.GetUriByValue(predicate, sectionName)
         uriType = ControlsModule.GetUriTypeByUri(predicate)
         object = ConvertValueByUriType(object, uriType)
+        'cut off _2 from the end
+        If Right(predicate, 2) = "_2" Then
+            predicate = Left(predicate, Len(predicate) - 2)
+        End If
         predicate = "<" + predicate + ">"
     End If
 
@@ -116,9 +122,9 @@ Private Sub WriteTruple(subject As String, predicate As String, object As String
     
     cell.EntireRow.NumberFormat = "@"
     cell.value = subject
-    cell.Offset(0, 1).value = predicate
-    cell.Offset(0, 2).value = object
-    cell.Offset(0, 3).value = "."
+    cell.offset(0, 1).value = predicate
+    cell.offset(0, 2).value = object
+    cell.offset(0, 3).value = "."
 
 End Sub
 
@@ -148,7 +154,7 @@ Private Sub WritePersonSections()
                 tokenA = CStr(tokens(i, 1))
                 tokenB = CStr(tokens(i, 2))
                 If tokenA <> "" And tokenB <> "" Then
-                    WriteTruple "_:" + LCase(sectionName), tokenA, tokenB
+                    WriteTruple "_:" + LCase(sectionName), tokenA, tokenB, UCase(sectionName)
                 End If
             Next i
         End If
@@ -242,7 +248,7 @@ Private Sub WriteAssignmentTokens(assignmentId As String)
             tokenA = CStr(tokens(i, 1))
             tokenB = CStr(tokens(i, 2))
             If tokenA <> "" And tokenB <> "" Then
-                WriteTruple "_:" + assignmentId, tokenA, tokenB
+                WriteTruple "_:" + assignmentId, tokenA, tokenB, "ASSIGNMENT"
             End If
         Next i
     End If
